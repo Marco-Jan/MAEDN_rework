@@ -38,21 +38,25 @@ class Play {
     this.players.push(player);
   }
 
-  playGame(player1: Player): void {
-    console.log(player1, "player1");
+  playGame(player2: Player): void {
+    //console.log(player2, "player2");
     
     const grid = document.getElementById("playField") as HTMLDivElement;
     this.startScreen.changeScreens();
     this.gameBoardUi.updateGameboardPlayerBank(this.players);
+
+    //Da sind wir grad
     grid.addEventListener("click", (e) => {
       this.checkGamePhase(e.target);
+      console.log(e.target);
       this.gameBoardUi.updateGameBoardUi(this.gameBoard);
     });
   }
   checkGamePhase(element: EventTarget | null) {
     let idNum: number | null;
     const currentPlayer = this.getCurrentPlayer();
-    console.log("player ", currentPlayer);
+    console.log(currentPlayer, "currentPlayer");
+    
     this.gameBoardUi.updateGameBoardUi(this.gameBoard);
     //gamephase 1 | würfeln
     if (
