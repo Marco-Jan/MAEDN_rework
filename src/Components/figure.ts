@@ -36,6 +36,10 @@ class Figure{
         return newPos <= 44;
     }
 
+    changeColor(color: string){
+        this.color = color;
+    }
+
 }
 
 export {Figure};

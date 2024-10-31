@@ -1,9 +1,10 @@
 import { Figure } from "./figure";
 class Player {
-    constructor(color, myName, playerName) {
+    constructor(color, myName, playerName, defaultColor) {
         this.color = color;
         this.name = myName;
         this.defaultName = playerName;
+        this.defaultColor = defaultColor;
         this.myFigures = [];
         this.createFigures();
         this.myPlayerEndzone = [0, 0, 0, 0];
@@ -17,6 +18,9 @@ class Player {
     //TODO Getgebaut für die abfrage 
     getDefaultName() {
         return this.defaultName;
+    }
+    getDefaultColor() {
+        return this.defaultColor;
     }
     addFigureInEndzone(figure) {
         this.myPlayerEndzone[figure.getEndzonePosition()] = figure;

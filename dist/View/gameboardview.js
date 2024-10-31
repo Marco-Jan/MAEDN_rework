@@ -48,22 +48,22 @@ class GameBoardUi {
         }
     }
     updateGameboardPlayerBank(players) {
-        //element = Player
-        players.forEach((element) => {
-            let myFiguresOnBank = element.getFiguresOnBank();
+        //TODO: abfrage der Farben nun auf getDefaultColor
+        players.forEach((player) => {
+            let myFiguresOnBank = player.getFiguresOnBank();
             if (myFiguresOnBank) {
-                for (let i = 1; i <= element.myFigures.length; i++) {
-                    const bankElement = document.getElementById(`${element.color}Bank-${i}`);
-                    console.log(bankElement, "Bankelemnt");
+                for (let i = 1; i <= player.myFigures.length; i++) {
+                    const bankElement = document.getElementById(`${player.getDefaultColor()}Bank-${i}`);
+                    //console.log(bankElement, "Bankelemnt");
                     if (myFiguresOnBank.includes(i)) {
-                        bankElement.classList.add(`${element.color}Figure`);
+                        bankElement.classList.add(`${player.getDefaultColor()}Figure`);
                         bankElement.classList.add(`figure`);
-                        bankElement.classList.add(`${element.color}Figure${i}`);
+                        bankElement.classList.add(`${player.getDefaultColor()}Figure${i}`);
                     }
                     else {
-                        bankElement.classList.remove(`${element.color}Figure`);
+                        bankElement.classList.remove(`${player.getDefaultColor()}Figure`);
                         bankElement.classList.remove(`figure`);
-                        bankElement.classList.remove(`${element.color}Figure${i}`);
+                        bankElement.classList.remove(`${player.getDefaultColor()}Figure${i}`);
                     }
                 }
             }
@@ -71,17 +71,17 @@ class GameBoardUi {
     }
     updateGameBoardPlayerEndzone(player) {
         for (let i = 0; i < player.myFigures.length; i++) {
-            const endzoneElement = document.getElementById(`${player.color}-${i}`);
+            const endzoneElement = document.getElementById(`${player.getDefaultColor()}-${i}`);
             if (player.myFigures[i].isInEndzone) {
-                endzoneElement.classList.add(`${player.color}Figure`);
+                endzoneElement.classList.add(`${player.getDefaultColor()}Figure`);
             }
             else {
-                endzoneElement.classList.remove(`${player.color}Figure`);
+                endzoneElement.classList.remove(`${player.getDefaultColor()}Figure`);
             }
         }
     }
     highlightFiguresToMove(currentPlayer) {
-        const figuresToMove = document.querySelectorAll(`.${currentPlayer.color}Figure`);
+        const figuresToMove = document.querySelectorAll(`.${currentPlayer.getDefaultColor()}Figure`);
         figuresToMove.forEach(element => {
             element.classList.add('playerTurn');
         });

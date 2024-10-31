@@ -30,6 +30,7 @@ class StartScreen {
       option1.textContent = color;
       colorP1.appendChild(option1);
     });
+    colorP1.selectedIndex = 0;
     container?.appendChild(colorP1);
 
   
@@ -48,6 +49,7 @@ class StartScreen {
       option2.textContent = color;
       colorP2.appendChild(option2);
     });
+    colorP2.selectedIndex = 1;
     container?.appendChild(colorP2);
 
    
@@ -67,6 +69,7 @@ class StartScreen {
       option3.textContent = color;
       colorP3.appendChild(option3);
     });
+    colorP3.selectedIndex = 2;
     container?.appendChild(colorP3);
 
     
@@ -85,6 +88,7 @@ class StartScreen {
       option4.textContent = color;
       colorP4.appendChild(option4);
     });
+    colorP4.selectedIndex = 3;
     container?.appendChild(colorP4);
   
 

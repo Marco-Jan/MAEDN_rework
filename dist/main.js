@@ -18,13 +18,13 @@ startButton.addEventListener("click", () => {
         const selectedColorP4 = document.getElementById('colorP4').value;
         const player4Name = document.getElementById('playerFour').value || 'Player4';
         //TODO: schaun ob ich den defauldname besser lösen kann _> in der PlayerKlasse mit gameboard verbunden placeFigure MEthode
-        const myPlayer1 = new Player(selectedColorP1, player1Name, "Player1");
+        const myPlayer1 = new Player(selectedColorP1, player1Name, "Player1", "red");
         play.addPlayer(myPlayer1);
-        const myPlayer2 = new Player(selectedColorP2, player2Name, "Player2");
+        const myPlayer2 = new Player(selectedColorP2, player2Name, "Player2", "blue");
         play.addPlayer(myPlayer2);
-        const myPlayer3 = new Player(selectedColorP3, player3Name, "Player3");
+        const myPlayer3 = new Player(selectedColorP3, player3Name, "Player3", "green");
         play.addPlayer(myPlayer3);
-        const myPlayer4 = new Player(selectedColorP4, player4Name, "Player4");
+        const myPlayer4 = new Player(selectedColorP4, player4Name, "Player4", "yellow");
         play.addPlayer(myPlayer4);
         // Spiel starten
         play.playGame(myPlayer2);

@@ -5,16 +5,19 @@ class Player {
   public myFigures: Figure[];
   private myPlayerEndzone: Figure[] | number[];
   private name: string;
-  private defaultName;
-  constructor(color: string, myName: string, playerName: string) {
+  private defaultName: string;
+  private defaultColor: string;
+  constructor(color: string, myName: string, playerName: string, defaultColor: string) {
     this.color = color;
     this.name = myName;
     this.defaultName = playerName;
+    this.defaultColor = defaultColor;
     this.myFigures = [];
     this.createFigures();
     this.myPlayerEndzone = [0, 0, 0, 0];
   }
   createFigures(): void {
+    console.log(this.color, "default color");
     for (let i = 1; i < 5; i++) {
       let figure = new Figure(this.color, i);
       this.myFigures.push(figure);
@@ -24,6 +27,12 @@ class Player {
   getDefaultName(){
     return this.defaultName;
   }
+
+  getDefaultColor(){
+    return this.defaultColor;
+  }
+
+
   addFigureInEndzone(figure: Figure): void {
     this.myPlayerEndzone[figure.getEndzonePosition()] = figure;
   }
